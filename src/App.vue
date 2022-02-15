@@ -4,7 +4,7 @@
     <div class="row align-items-center">
       <div class="col-3" id="brand">
         <router-link to="/">
-          <img src="/images/hobbyLogo.png">
+          <img src="/images/HobbyLogo.png">
         </router-link>
       </div>
       <div class="col">
