@@ -2,8 +2,8 @@
 <div>
   <HobbyList :hobbies="hobbies" />
   <div class="row" id="hobbyInfo">
-    <div class="col">
-      <iframe width="560" height="315" :src="viewHobby.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="col-sm-12 col-md">
+      <iframe width=100% height="315" :src="viewHobby.videoURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="col">
       <h4>Introduction to {{viewHobby.name}}</h4> <hr>
@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style>
+  iframe{
+    margin: 1em;
+  }
   .image{
     height: 300px;
     width: 300px;
@@ -84,8 +87,7 @@ export default {
     padding: 0 15px;
   }
   p{
-    text-align: justify;
-    text-justify: none;
+    text-align: left;
   }
   #side{
     margin: 2em 0;

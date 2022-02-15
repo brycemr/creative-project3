@@ -1,26 +1,36 @@
 <template>
 <div>
-<div class="rental"><h2>CONTACT US</h2></div>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-md col-lg">
+    <div class="col-sm-12 col-md-4">
       <img id="image" src="/images/contact.jpg">
     </div>
-    <div class="col-12 col-md col-lg">
-      <strong>HAVE SOME QUESTIONS OR SUGGESTIONS?</strong><br> We want to hear from you! We can reached
-      at help@hobbyshop.com<br><br>
-      <strong>WANT TO PARTNER WITH US?</strong><br>
-      We are always looking for new tutorial creators to partner with, to find out
-      more about our partnership program please contact alex@hobbyshop.com<br>
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <strong>HAVE SOME QUESTIONS OR SUGGESTIONS?</strong><br> We want to hear from you! We can reached
+          at help@hobbyshop.com<br><br>
+          <strong>WANT TO PARTNER WITH US?</strong><br>
+          We are always looking for new tutorial creators to partner with, to find out
+          more about our partnership program please contact alex@hobbyshop.com<br>
+        </div>
+        <div class="col">
+          <div v-if="feedback">
+            <h3>Thank You for the Feedback!</h3>
+          </div>
+          <div v-else>
+          <h3>Leave Us Feedback</h3>
+            <form v-on:submit.prevent="addFeedback">
+              <textarea v-model="addedFeedback"></textarea><br>
+              <button type="">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<h3>Leave Us Feedback</h3>
-      <form v-on:submit.prevent="addFeedback">
-        <textarea v-model="addedFeedback"></textarea>
-        <br />
-        <button type="">Submit</button>
-      </form>
+<br>
 </div>
 </template>
 
@@ -30,12 +40,13 @@ export default{
   data() {
     return{
     addedFeedback: '',
-    addedName: ''
+    addedName: '',
+    feedback: false
     }
   },
   methods: {
     addFeedback() {
-
+      this.feedback = true;
     }
   }
 }
@@ -43,8 +54,7 @@ export default{
 
 <style>
 #image{
-  height: 300px;
-  width: 300px;
+  width: 100%;
   object-fit: cover;
   padding: 2px;
   border: 2px solid grey;

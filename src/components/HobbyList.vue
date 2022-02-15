@@ -1,8 +1,8 @@
 <template>
 <div class="wrapper">
   <div class="hobby" v-for="hobby in hobbies" :key="hobby.name">
-    <div>
-      <button v-on:click="selectHobby($event)" :id="hobby.name">{{hobby.name}}</button>
+    <div class="hobbiesButton">
+      <button class="hobbiesButton" v-on:click="selectHobby($event)" :id="hobby.name">{{hobby.name}}</button>
     </div>
   </div>
 </div>
@@ -32,5 +32,8 @@ export default {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+  }
+  .hobbiesButton{
+    height:100%;
   }
 </style>

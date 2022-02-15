@@ -1,32 +1,42 @@
 <template>
   <div id="app">
-    <div id="menu">
-      <div id="brand">
+  <div class="container-fluid" id="menu">
+    <div class="row align-items-center">
+      <div class="col-3" id="brand">
         <router-link to="/">
           <img src="/images/hobbyLogo.png">
         </router-link>
       </div>
-      <div id="link1">
-        <router-link to="/rentals">RENTALS</router-link>
-      </div>
-      <div id="link2">
-        <router-link to="/tutorials">TUTORIALS</router-link>
-      </div>
-      <div id="link3">
-        <router-link to="/about">CONTACT US</router-link>
-      </div>
-      <div id="signIn">
-        <router-link to="/">
-          <div class="signIn">
-            <img class="icon" src="/images/userIcon.png">
-            <p>Sign In</p>
+      <div class="col">
+        <div class="row align-items-center" id="menu-item">
+          <div class="col" id="link1">
+            <router-link to="/rentals">RENTALS</router-link>
           </div>
-        </router-link>
+          <div class="col" id="link2">
+            <router-link to="/tutorials">TUTORIALS</router-link>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-12" id="signIn">
+            <router-link to="/">
+              <div class="signIn">
+                <img class="icon" src="/images/userIcon.png">
+                <p>Sign In</p>
+              </div>
+            </router-link>
+          </div>
+          <div class="col">
+            <router-link to="/about">Contact Us</router-link>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
     <router-view/>
     <div id="footer">
-    <a href="https://github.com/brycemr/creative-project3">Bryce's Creative Project 3 Github</a>
+      <a href="https://github.com/brycemr/creative-project3">Bryce's Creative Project 3 Github</a>
     </div>
   </div>
 </template>
@@ -43,17 +53,18 @@
 .signIn p{
   justify-content: center;
   text-align: center;
+  margin: 0;
 }
 
 #menu {
-  display: grid;
-  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 5px;
-  grid-template-areas: "brand link1 link2 link3 none";
   background-color: #edeaea;
-  padding-bottom: 15px;
+  padding-bottom: 1em;
+  width: 100%;
 }
 
+.bg-light{
+  background-color: #edeaea;
+}
 #menu a {
   color: #03989e;
 }
@@ -69,10 +80,10 @@
 }
 
 #brand img {
-  height: 6em;
+  height: 5em;
 }
 .icon{
-  height: 3.5em;
+  height: 3em;
 }
 #link1 {
   grid-area: link1;
@@ -80,6 +91,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
+  margin: 0.5em;
 }
 
 #link2 {
@@ -95,16 +107,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
+#signIn {
+  grid-area: signIn;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .menu-item {
   display: flex;
   flex-direction: column;
 }
 
 .menu-item p {
-  margin: 0px;
+  margin: 0;
 }
 
 .box {
